@@ -1,0 +1,51 @@
+UMIDIGIスマホ（MediaTek）をRakuten UN-LIMITで使う（設定方法）
+参照：https://www.youtube.com/watch?v=JODdixRtmfM
+
+アクセスポイント名→＋（追加）
+APN名	楽天 (rakuten.jp)
+APN	rakuten.jp
+MCC	440
+MNC	11
+APNタイプ	default,supl,tether
+APNプロトコル	IPv4/IPv6
+APNローミングプロトコル	IPv4/IPv6
+ベアラー　LTE
+
+アクセスポイント名→＋（追加）
+ims
+APN名	ims
+APN	ims
+MCC	440
+MNC	11
+APNタイプ	ims
+APNプロトコル	IPv4/IPv6
+APNローミングプロトコル	IPv4/IPv6
+ベアラー　LTE
+
+電話をかける
+*#*#3646633#*#*　　（Engineerモードにする）
+Networking Selectiong
+多分SIM１（楽天のSIMを入れたほう）
+set preferred network type
+LTE　Onlyを選択
+
+これでインターネットには接続できるはず。
+
+しかし問題あり、rakuten LinkアプリのSMSができない。
+はじめる→承認→ログインする→電話番号をいれて送信→認証コードが送られて
+来ない。困った。
+
+そこで、以下を行う。
+電話をかける
+*#*#3646633#*#*　（Engineerモードにする）
+IMSをタップ→SIM1→VOLTE SettingをdefaultからCMW500→戻って→
+Misc Feature Config→hVolteを一旦bSRLTEに。その後もう一度、hVolteに戻す。
+をおこなったところ、アンテナピクト脇にVoLTE表示（HDという表記）がされた。
+もう一度rakuten Linkアプリを起動。
+はじめる→承認→ログインする→電話番号をいれて送信→認証コードが無事
+送られてきます。SMS認証ができる。
+
+これで、電話を無事発信できる。
+
+UMIDIGI　One Max Android8.1.0 がRakuten UN-LIMITで
+使えます。
